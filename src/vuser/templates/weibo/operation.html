@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{%block title%}sina api{%endblock%}
+{%block content%}
+	<form action="/getfans/" method="post">{%csrf_token%}
+		  <span class="blacktext">
+		  <table>
+			{{userForm.as_table}}
+		  </table>
+		  </span>
+		  <input type="submit" value="获取粉丝"/><input type="reset" value="重设"  />
+	  </form>
+   <a href='/userinfo/'>获取用户信息</a>
+{%endblock%}
