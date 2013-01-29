@@ -74,6 +74,7 @@ def get_fans(request):
                 userinfo.save()          
     return render_to_response("weibo/operation.html",{'userForm':forms.UserForm()},context_instance=RequestContext(request))
 def get_userinfo(request):
+    print 'hello'
     access_token=request.session['access_token']
     expires_in=request.session['expires_in']
     client = APIClient(app_key=APP_KEY, app_secret=APP_SECRET, redirect_uri=CALLBACK_URL)
